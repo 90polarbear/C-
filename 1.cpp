@@ -1,15 +1,15 @@
 #include "stdio.h"
 #include "stdlib.h"
-int main(void)  /*int¬°¾ã¼Æ mian¬°¦WºÙ void¬°¤£«ü©w¼Æ¦r*/
+int main(void)  /*intç‚ºæ•´æ•¸ mianç‚ºåç¨± voidç‚ºä¸æŒ‡å®šæ•¸å­—*/
 {
-	float x=10.1, y=20.2;  /*int¬°¾ã¼Æ x¬°¦WºÙ x­È¬°10 ¨Ã¶}¤@­Ó°O¾ĞÅéªÅ¶¡µ¹x*/ 
-	float A[10]; /*¶}10­Ó°O¾ĞÅé¦ì§}*/
-	printf("xªº­È¬°:%f\n", x);
-	printf("yªº­È¬°:%f\n", y);
-	printf("xªº¦ì§}¬°:%d\n", &x); /*&°O¾ĞÅé¦ì§}*/
-	printf("yªº¦ì§}¬°:%d\n", &y);
+	float x=10.1, y=20.2;  /*intç‚ºæ•´æ•¸ xç‚ºåç¨± xå€¼ç‚º10 ä¸¦é–‹ä¸€å€‹è¨˜æ†¶é«”ç©ºé–“çµ¦x*/ 
+	float A[10]; /*é–‹10å€‹è¨˜æ†¶é«”ä½å€*/
+	printf("xçš„å€¼ç‚º:%f\n", x);
+	printf("yçš„å€¼ç‚º:%f\n", y);
+	printf("xçš„ä½å€ç‚º:%d\n", &x); /*&è¨˜æ†¶é«”ä½å€*/
+	printf("yçš„ä½å€ç‚º:%d\n", &y);
 	for(int i=0; i<10; i++){
-		printf("°}¦CA[%d]ªº¦ì§}¬°:%d\n", i, &A[i]); /*show¥X A[0]-A[9]°O¾ĞÅé¦ì§}*/
+		printf("é™£åˆ—A[%d]çš„ä½å€ç‚º:%d\n", i, &A[i]); /*showå‡º A[0]-A[9]è¨˜æ†¶é«”ä½å€*/
 	}
 	return 0;
 }
@@ -18,5 +18,5 @@ int main(void)  /*int¬°¾ã¼Æ mian¬°¦WºÙ void¬°¤£«ü©w¼Æ¦r*/
 /*  char=1byte  %d
    short=2byte  %d
      int=4byte  %d
-   float=4byte  %d (¥i©ñ¤J¤p¼Æ)
+   float=4byte  %f (å¯æ”¾å…¥å°æ•¸)
   double=8byte  %f */
