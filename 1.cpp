@@ -4,7 +4,7 @@ int main(void)  /*int為整數 mian為名稱 void為不指定數字*/
 {
 	float x=10.1, y=20.2;  /*int為整數 x為名稱 x值為10 並開一個記憶體空間給x*/ 
 	float A[10]; /*開10個記憶體位址*/
-	int *p = &x; /* *p->*為指標 指向某個資料的記憶體位址 */
+	int *p = &x; /* *p->*為指標 指向x資料的記憶體位址，則p值為x記憶體位址數值，p也會有自己的記憶體位址 */
 	int *q = &y;
 	printf("x的值為:%f\n", x);
 	printf("y的值為:%f\n", y);
