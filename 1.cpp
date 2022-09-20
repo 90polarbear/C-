@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include "stdio.h" 載入標頭檔(標準輸出輸入函式)
+#include "stdlib.h"         (標準函式庫)
 int main(void)  /*int為整數 mian為名稱 void為不指定數字*/
 {
 	float x=10.1, y=20.2;  /*int為整數 x為名稱 x值為10 並開一個記憶體空間給x*/ 
