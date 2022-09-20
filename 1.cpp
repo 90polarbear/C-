@@ -6,7 +6,7 @@ int main(void)  /*int為整數 mian為名稱 void為不指定數字*/
 	float A[10]; /*開10個記憶體位址*/
 	printf("x的值為:%f\n", x);
 	printf("y的值為:%f\n", y);
-	printf("x的位址為:%d\n", &x); /*&記憶體位址*/
+	printf("x的位址為:%d\n", &x); /*&x 顯示x記憶體位址*/
 	printf("y的位址為:%d\n", &y);
 	for(int i=0; i<10; i++){
 		printf("陣列A[%d]的位址為:%d\n", i, &A[i]); /*show出 A[0]-A[9]記憶體位址*/
