@@ -4,9 +4,9 @@ int main (void)
 {
 	char name [10];
 	
-	printf("¿é¤J¦W¦r:");
+	printf("è¼¸å…¥åå­—:");
 	scanf("%s",name );
-	printf("§Aªº¦W¦r:%s",name);
+	printf("ä½ çš„åå­—:%s",name);
 	
 
 	return 0;
