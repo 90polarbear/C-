@@ -5,10 +5,10 @@ int main (void)
 	int A[10];
 	int B=0;
 	for(int i=0; i<10;i++) {
-		printf("¿é¤JA[%d]ªº­È:",i);
+		printf("è¼¸å…¥A[%d]çš„å€¼:",i);
 		scanf("%d",&A[i]);
 		 B+=A[i];
 	} 
-	printf("Á`©M­È¬°:%d",B); 
+	printf("ç¸½å’Œå€¼ç‚º:%d",B); 
 	return 0;
  } 
