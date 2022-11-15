@@ -22,10 +22,15 @@ int main(){
 			}
 		}
 		else if(x==3){
-			if(top==0)printf("裡面數值為空");
+			if(top==20)
+				printf("裡面數值滿了");
+			else if(top==0)
+				printf("裡面數值為空");
+			else {
 			for(int i=0;i<top;i++){
 				printf("%d,",buffer[i]);
 			}
+		}
 			printf("\n");
 		}
 		else if(x>4)printf("選擇錯誤!再試一次!\n");
