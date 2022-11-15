@@ -1,0 +1,51 @@
+#include "stdio.h"
+#include "stdlib.h"
+#include "Queue.h"
+
+int main(){
+	int buffer[20],top=0,q=0,value,x=0;		
+	while(x != 4){
+		printf("1.輸入,2.取出,3.印出,4.離開\n");
+		scanf("%d",&x);
+		if(x==1){
+			printf("請輸入數值");
+			scanf("%d",&value);
+			if(push(buffer,value,top)==-1){
+				printf("裡面的數值已滿\n");
+			}
+		}
+		else if(x==2){
+			if(pull(buffer,value,top,q)==-1){
+				printf("裡面數值為空\n");
+			}else{
+				printf("拿取的值為%d\n",value);
+			}
+		}
+		else if(x==3){
+			if(top==20)
+				printf("裡面數值滿了");
+			else if(top==q)
+				printf("裡面數值為空");
+			else {
+			for(int i=q;i<top;i++){
+				printf("%d,",buffer[i]);
+			}
+		}
+			printf("\n");
+		}
+		else if(x>4)printf("選擇錯誤!再試一次!\n");
+	}
+	return 1;
+} 
+int push(int buffer[20],int value,int&top){
+	if(top==20)return-1;
+	buffer[top]=value;
+	top++;
+	return 1;
+}
+int pull(int buffer[20],int&value,int&top,int&q){
+	if(top==q)return-1;
+	value = buffer[q];
+	q++;
+	return 1;
+}
