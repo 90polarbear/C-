@@ -1,0 +1,105 @@
+#include "stdio.h"
+#include "stdlib.h"
+#include "linklist.h"
+
+struct list{
+		struct list* pri=NULL;
+		struct list* next=NULL;
+		int id;
+		char name[10];
+		int score;
+	};
+static struct list* header;
+
+int main(){
+	int s=0, value;
+	header = NULL;
+	while(s!=4){
+		printf("1. 新增學生資料, 2. 刪除學生資料, 3. 顯示學生資料, 4. Exit\n");
+		scanf("%d",&s);
+		if(s==1){		
+			if(header == NULL){
+				header = createlist(header);
+			}
+			else header = Add(header);
+		}
+		if(s==2){
+			printf("輸入學生學號:");
+			scanf("%d", &value);
+			header = Delete(header, value);
+		}
+		if(s==3){
+			header = Show(header);
+		}
+	}
+	return 0;	
+}
+
+
+struct list* createlist(struct list* header){
+	header = (struct list *)malloc(sizeof(struct list));
+	if(header == NULL) return NULL;
+	printf("輸入學生學號:");
+	scanf("%d",&header->id);
+	printf("輸入學生姓名:");
+	scanf("%s",&header->name);
+	printf("輸入學生成績:");
+	scanf("%d",&header->score);
+	header->next = NULL;
+	header->pri = NULL;
+	printf("\n");
+	return header;
+}
+
+struct list* Add(struct list* header){
+	struct list* current;
+	current = header;
+	while(current->next != NULL){
+		current = current->next;
+	}	
+	current->next = (struct list *)malloc(sizeof(struct list));
+	printf("輸入學生學號:");
+	scanf("%d",&current->next->id);
+	printf("輸入學生姓名:");
+	scanf("%s",&current->next->name);
+	printf("輸入學生成績:");
+	scanf("%d",&current->next->score);
+	current->next->pri = current;
+	current->next->next = NULL;
+	printf("\n");
+	return header;
+}
+
+struct list* Delete(struct list* header, int value){
+	struct list* current;
+	current = header;
+	while(current->id != value){
+		current = current->next;
+	}
+	if (current->pri == NULL){
+		header = current->next;
+		header->pri = NULL;
+		header->next = current->next->next;
+		
+	}
+	else if(current->next==NULL){
+		current->pri->next = NULL;
+	}
+	else{
+		current->pri->next = current->next;
+		current->next->pri = current->pri;
+	}
+	free(current);
+	return header;
+}
+
+struct list* Show(struct list* header){
+	struct list* current;
+	current = header;
+	while(current!=NULL){
+		printf("學生學號:%d,學生姓名:%s,學生姓名:%d \n", current->id,current->name,current->score);
+		current = current->next;
+	}
+	printf("\n");
+	return header;
+}
